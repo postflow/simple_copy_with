@@ -1,5 +1,6 @@
 name: copy_with_annotations
-description: A new Flutter package project.
+description: generates a copywith method for classes marked @copywith annotation using build_runner
+homepage: https://github.com/postflow/simple_copy_with
 version: 0.0.2
 
 

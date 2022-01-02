@@ -1,39 +1,42 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+## This package contains annotations  for generate copywith method for any Dart classes
+### Configure:
+Add in you  pubspec.yaml to dependencies section:
+```
+dependencies:
+  ...        
+  copy_with_annotations:
+  ...        
+```   
+and to dev_dependencies ( build_runner & copy_with_generators ):
+```
+dev_dependencies:
+  ...
+  build_runner:
+  copy_with_generators:
+  ...
 ```
 
-## Additional information
+### Use:
+Annotate you class copywith annotation. Like this:
+```dart
+part 'profile_model.g.dart';
+@copywith
+class ProfileModel {
+    String _name = 'Aachman';
+    int _age = 20;
+    bool _codes = true;
+}
+```
+after in console run this command:
+```
+ flutter pub run build_runner build 
+```
+and use:
+```dart
+ final ProfileModel profile = ProfileModel()
+  ..name = 'Sergio'
+  ..age = 35
+  ..codes = true;
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+final newProfile = profile.copyWith(name: 'Michael');
+```
