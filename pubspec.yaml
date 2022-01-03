@@ -1,4 +1,4 @@
-name: copy_with_annotations
+name: simple_copy_with_annotations
 description: generates a copywith method for classes marked @copywith annotation using build_runner
 homepage: https://github.com/postflow/simple_copy_with
 repository: https://github.com/postflow/simple_copy_with

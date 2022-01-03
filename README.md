@@ -4,7 +4,7 @@ Add in you  pubspec.yaml to dependencies section:
 ```
 dependencies:
   ...        
-  copy_with_annotations:
+  simple_copy_with_annotations:
   ...        
 ```   
 and to dev_dependencies ( build_runner & copy_with_generators ):
@@ -12,7 +12,7 @@ and to dev_dependencies ( build_runner & copy_with_generators ):
 dev_dependencies:
   ...
   build_runner:
-  copy_with_generators:
+  simple_copy_with_generators:
   ...
 ```
 
